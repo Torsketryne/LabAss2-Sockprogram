@@ -1,3 +1,5 @@
+import java.io.*;
+import java.net.*;
 from socket import *
 
 public class TvActiveServer {
