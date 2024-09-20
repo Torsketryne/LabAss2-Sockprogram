@@ -1,7 +1,11 @@
 import java.io.*;
 import java.net.*;
 
+<<<<<<< HEAD
 class TvActiveServer {
+=======
+public class TvActiveServer {
+>>>>>>> dev
     public static void main(String argv[]) throws Exception {
         String client_message;
         // String capitalizedSentence;
