@@ -14,12 +14,8 @@ class TvActiveServer {
             PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
             client_message = inFromClient.readLine();
 
-            /**
-             * Note: Not really needed for now.
-            capitalizedSentence = client_message.toUpperCase();
-            outToClient.println(capitalizedSentence);
-            **/
+//            capitalizedSentence = client_message.toUpperCase();
+//            outToClient.println(capitalizedSentence);
         }
-
     }
 }
