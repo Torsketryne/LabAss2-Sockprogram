@@ -1,25 +1,23 @@
 import java.io.*;
 import java.net.*;
 
-<<<<<<< HEAD
-class TvActiveServer {
-=======
 public class TvActiveServer {
->>>>>>> dev
-    public static void main(String argv[]) throws Exception {
-        String client_message;
-        // String capitalizedSentence;
 
-        ServerSocket welcomeSocket = new ServerSocket(6789);
-        while(true) {
+  public static void main(String argv[]) throws Exception {
+    String client_message;
+    // String capitalizedSentence;
 
-            Socket connectionSocket = welcomeSocket.accept();
-            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-            PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
-            client_message = inFromClient.readLine();
+    ServerSocket welcomeSocket = new ServerSocket(6789);
+    while (true) {
+
+      Socket connectionSocket = welcomeSocket.accept();
+      BufferedReader inFromClient =
+          new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+      PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
+      client_message = inFromClient.readLine();
 
 //            capitalizedSentence = client_message.toUpperCase();
 //            outToClient.println(capitalizedSentence);
-        }
     }
+  }
 }
