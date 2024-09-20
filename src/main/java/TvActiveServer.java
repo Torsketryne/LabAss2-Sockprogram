@@ -1,17 +1,25 @@
 import java.io.*;
 import java.net.*;
-from socket import *
 
 public class TvActiveServer {
+    public static void main(String argv[]) throws Exception {
+        String client_message;
+        // String capitalizedSentence;
 
-    welcomeSocket = socket(AF_INET, SOCK_STREAM)
-    welcomeSocket.bind(('', 6789))
-    welcomeSocket.listen(1)
-    connectionSocket, addr = welcomeSocket.accept()
-    client_message = connectionSocket.recv(1000).decode()
-    print("CLIENT: ", client_message)
+        ServerSocket welcomeSocket = new ServerSocket(6789);
+        while(true) {
 
-    connectionSocket.close()
-    welcomeSocket.close()
+            Socket connectionSocket = welcomeSocket.accept();
+            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
+            client_message = inFromClient.readLine();
 
+            /**
+             * Note: Not really needed for now.
+             capitalizedSentence = client_message.toUpperCase();
+             outToClient.println(capitalizedSentence);
+             **/
+        }
+
+    }
 }
