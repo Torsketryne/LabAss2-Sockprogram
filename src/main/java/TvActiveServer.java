@@ -5,12 +5,10 @@ import java.io.PrintWriter;
 import java.net.*;
 
 public class TvActiveServer {
-  private static boolean isTvOn = false;
-  private static int currentChannel = 0; // default channel
+  //private static boolean isTvOn = false;
+  //private static int currentChannel = 0; // default channel
 
-  public static void main(String argv[]) throws Exception {
-    String clientMessage;
-
+  public void runServer() throws Exception {
     // Create server socket on port 6789
     ServerSocket welcomeSocket = new ServerSocket(6789);
     System.out.println("TV server is running...");
@@ -22,7 +20,7 @@ public class TvActiveServer {
       PrintWriter outToClient = new PrintWriter(connectionSocket.getOutputStream(), true);
 
       // Read client message
-      clientMessage = inFromClient.readLine();
+      String clientMessage = inFromClient.readLine();
       if (clientMessage != null) {
         System.out.println("Received command: " + clientMessage);
         String response = handleCommand(clientMessage); // Process the command
@@ -34,28 +32,8 @@ public class TvActiveServer {
     }
   }
 
+  //Should be fixed after setting up smartTv class
   private static String handleCommand(String clientMessage) {
-    switch (command.toUpperCase()) {
-      case "ON":
-        if (!isTvOn) {
-          isTvOn = ture;
-          return "TV is turned ON";
-        } else {
-          return "TV is already ON";
-        }
-      case "OFF":
-        if (!isTvOn) {
-          isTvOn = false;
-          return "TV is turned OFF";
-        } else {
-          return "TV is already OFF";
-        }
-      default:
-        if (Command.startWith("Channel")){
-          return changeChannel(command);
-        }else{
-          return "Invalid command";
-        }
-    }
+    return "Command not supported.";
   }
-}
+  }

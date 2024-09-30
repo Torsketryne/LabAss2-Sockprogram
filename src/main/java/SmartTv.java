@@ -1,11 +1,12 @@
-public class SmartTv {
+public class SmartTv extends TvActiveServer {
 
     private boolean isOn;
     private int currentChannel;
     private int totalChannels;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SmartTv tv = new SmartTv();
+        tv.runServer();
     }
 
     public SmartTv() {
