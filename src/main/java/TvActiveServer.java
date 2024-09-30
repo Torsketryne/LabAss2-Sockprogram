@@ -35,6 +35,27 @@ public class TvActiveServer {
   }
 
   private static String handleCommand(String clientMessage) {
-    return null;
+    switch (command.toUpperCase()) {
+      case "ON":
+        if (!isTvOn) {
+          isTvOn = ture;
+          return "TV is turned ON";
+        } else {
+          return "TV is already ON";
+        }
+      case "OFF":
+        if (!isTvOn) {
+          isTvOn = false;
+          return "TV is turned OFF";
+        } else {
+          return "TV is already OFF";
+        }
+      default:
+        if (Command.startWith("Channel")){
+          return changeChannel(command);
+        }else{
+          return "Invalid command";
+        }
+    }
   }
-  }
+}
