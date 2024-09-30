@@ -54,7 +54,4 @@ public class SmartTv {
         }
         return Answer;
     }
-
-
-
 }
