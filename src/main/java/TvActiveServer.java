@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
 
-public class TvActiveServer {
+public abstract class TvActiveServer {
   //private static boolean isTvOn = false;
   //private static int currentChannel = 0; // default channel
 
@@ -33,7 +33,7 @@ public class TvActiveServer {
   }
 
   //Should be fixed after setting up smartTv class
-  private static String handleCommand(String clientMessage) {
-    return "Command not supported.";
-  }
-  }
+  public abstract String handleCommand(String clientMessage);
+
+
+}

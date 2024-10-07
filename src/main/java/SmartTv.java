@@ -36,4 +36,38 @@ public class SmartTv extends TvActiveServer {
             return  "Invalid channel number.";
         }
     }
+
+    @Override
+    public String handleCommand(String clientMessage) {
+        String response;
+        String[] parts = clientMessage.split(" ");
+        String command = parts[0].toUpperCase();
+        switch (command) {
+            case "ON":
+                turnOn();
+                response = "TV is on.";
+                break;
+            case "OFF":
+                turnOff();
+                response = "TV is off.";
+                break;
+            case "CHANNEL":
+                if (parts.length > 1) {
+                    int channel = Integer.parseInt(parts[1]);
+                    response = setChannel(channel);
+                } else {
+                    response = "Invalid command.";
+                }
+                break;
+            case "GETCHANNEL":
+                response = getChannel();
+                break;
+            case "GETCHANNELS":
+                response = getChannels();
+                break;
+            default:
+                response = "Command not supported.";
+        }
+        return response;
+    }
 }
