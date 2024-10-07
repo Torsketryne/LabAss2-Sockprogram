@@ -62,12 +62,18 @@ public class SmartTv extends TvActiveServer {
             case "GETCHANNEL":
                 response = getChannel();
                 break;
-            case "GETCHANNELS":
-                response = getChannels();
-                break;
             default:
                 response = "Command not supported.";
         }
         return response;
+    }
+
+    public static void main(String[] args) {
+        SmartTv smartTv = new SmartTv();
+        try{
+            smartTv.runServer();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
