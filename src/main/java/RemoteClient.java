@@ -23,7 +23,7 @@ class RemoteClient {
             // Exit the client if the user inputs "EXIT"
             if (sentence.equalsIgnoreCase("EXIT")) {
                 outToServer.println(sentence);
-                System.out.println("Exiting Remote Client...");
+                System.out.println("Exiting Remote Client");
                 break;
             }
 
