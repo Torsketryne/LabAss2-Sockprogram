@@ -37,6 +37,4 @@ FROM SERVER: Channel set to 3
 Enter command: GETCHANNEL
 FROM SERVER: Current channel: 3
 ```
-```
 
-You can place this `README.md` in the project’s root directory (outside the `src` folder).
