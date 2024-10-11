@@ -3,8 +3,36 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
 
+/**
+ * The {@code TvActiveServer} class is an abstract server class that provides the basic structure
+ * for a TV server, including running the server and handling client connections.
+ * Subclasses should implement the {@code handleCommand} method to process specific client commands.
+ * <p>
+ * The server listens for incoming connections from clients on port 6789 and processes client messages in a continuous loop.
+ * </p>
+ *
+ * <p><b>Usage:</b></p>
+ * <pre>{@code
+ * public class SmartTv extends TvActiveServer {
+ *     @Override
+ *     public String handleCommand(String clientMessage) {
+ *         // Handle the client command and return a response
+ *     }
+ * }
+ * }</pre>
+ *
+ * @author Daniel, Nikolai, Bakri, Vineet
+ * @version 1.0
+ * @since 2024-10-08
+ */
 public abstract class TvActiveServer {
 
+  /**
+   * Starts the TV server, listens for client connections, and processes commands.
+   * This method runs in a continuous loop until the client sends the "EXIT" command.
+   *
+   * @throws Exception If an error occurs while establishing the server or processing client connections.
+   */
   public void runServer() throws Exception {
     // Create server socket on port 6789
     ServerSocket welcomeSocket = new ServerSocket(6789);
@@ -35,5 +63,11 @@ public abstract class TvActiveServer {
     }
   }
 
+  /**
+   * Abstract method that must be implemented by subclasses to handle specific client commands.
+   *
+   * @param clientMessage The command sent by the client.
+   * @return A response message to be sent back to the client.
+   */
   public abstract String handleCommand(String clientMessage);
 }

@@ -1,7 +1,47 @@
 import java.io.*;
 import java.net.*;
 
-class RemoteClient {
+/**
+ * The {@code RemoteClient} class represents a client program that connects to a TV server and sends commands to control the TV.
+ * <p>
+ * The client can send the following commands to the server:
+ * <ul>
+ *     <li><b>ON</b>: Turns on the TV.</li>
+ *     <li><b>OFF</b>: Turns off the TV.</li>
+ *     <li><b>CHANNEL &lt;number&gt;</b>: Sets the TV channel to the specified number.</li>
+ *     <li><b>GETCHANNEL</b>: Requests the current TV channel from the server.</li>
+ *     <li><b>EXIT</b>: Closes the client and exits the program.</li>
+ * </ul>
+ * <p>
+ * The client communicates with the server over a socket connection, receives responses from the server, and displays them in the console.
+ * The program runs in a continuous loop until the user enters the {@code EXIT} command.
+ * </p>
+ *
+ * <p><b>Usage:</b></p>
+ * <pre>{@code
+ * java RemoteClient
+ * }</pre>
+ *
+ * <p><b>Example interaction:</b></p>
+ * <pre>
+ * Connected to TV server...
+ * Enter command (ON, OFF, CHANNEL <number>, GETCHANNEL, or EXIT): ON
+ * FROM SERVER: TV turned ON
+ * </pre>
+ *
+ * @author Daniel, Nikolai, Bakri, Vineet
+ * @version 1.0
+ * @since 2024-10-08
+ */
+public class RemoteClient {
+
+    /**
+     * The entry point of the client program. This method establishes a connection to the TV server,
+     * sends user commands, and prints server responses.
+     *
+     * @param args Command line arguments (not used).
+     * @throws Exception if an I/O error occurs when trying to connect or communicate with the server.
+     */
     public static void main(String[] args) throws Exception {
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
