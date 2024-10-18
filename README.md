@@ -38,3 +38,7 @@ Enter command: GETCHANNEL
 FROM SERVER: Current channel: 3
 ```
 
+## AI Implementation
+AI was used to help with documentation in this project following the javadoc format.
+The rest of the code was written by us manually, however AI was used to help understand 
+the theory behind the project.
